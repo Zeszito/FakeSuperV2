@@ -34,11 +34,14 @@ void Gravar();
 void LeJogos();
 void Repor();
 ProbEquipas GeraEstatistica(int equipa1, int equipa2);
+float RetornarSaldo();
 
 int main(void) {
-	int Equipa1, Equipa2, Equipa3, Equipa4;
+	int Equipa1, Equipa2, Equipa3, Equipa4, Equipa5, Equipa6, Equipa7, Equipa8, Equipa9, Equipa10, Equipa11, Equipa12, Equipa13, Equipa14, Equipa15, Equipa16;
 	int JogosEscolhidos[8];
-	int VezesQueAposta, i, ResultadoEscolhido;
+	int ResultadoEscolhido[8];
+	int ValorApostado;
+	int VezesQueAposta, i;
 	int sair = 0;
 	char chose, modalidade;
 	srand(time(NULL));
@@ -51,50 +54,69 @@ int main(void) {
 	printf("%f-%f-%f-%f-%f\n", tentativa.cotaEquipa1V, tentativa.cotaEquipa2V, tentativa.cotaEquipaE, tentativa.probVitoriaEq1, tentativa.probVitoriaEq2);
 	printf("%s-%s\n", tentativa.nomeDeEquipa1, tentativa.ficheiro1);
 	printf("%s-%s\n", tentativa.nomeDeEquipa2, tentativa.ficheiro2);*/
+	printf("Equipa 1 V.S. Equipa 2\n");
 	Equipa1 = rand() % 3 + 1;
 	Equipa2 = rand() % 3 + 4;
 	jogo1 = GeraEstatistica(Equipa1, Equipa2);
-	printf("1.%s V.S. %s\n", jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2);
+	printf("\n1.%s V.S. %s\n", jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2);
 
 	Equipa3 = rand() % 3 + 7;
 	Equipa4 = rand() % 3 + 10;
 	jogo2 = GeraEstatistica(Equipa3, Equipa4);
 	printf("2.%s V.S. %s\n", jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2);
 
-	//Faz esta merda!Otario!
+	Equipa5 = rand() % 3 + 13;
+	Equipa6 = rand() % 3 + 16;
+	jogo2 = GeraEstatistica(Equipa5, Equipa6);
+	printf("3.%s V.S. %s\n", jogo3.nomeDeEquipa1, jogo3.nomeDeEquipa2);
 
+	Equipa7 = rand() % 3 + 7;
+	Equipa8 = rand() % 3 + 10;
+	jogo2 = GeraEstatistica(Equipa3, Equipa4);
+	printf("2.%s V.S. %s\n", jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2);
+
+	//Faz esta merda!Otario!
+	printf("Quantas apostas deseja fazer?"); scanf("%d", VezesQueAposta);
+	do {
+		printf("Quanto deseja apostar por jogo?"); scanf("%d", ValorApostado);
+	} while (ValorApostado > 100 || ValorApostado < 0);
+	ValorApostado = ValorApostado*VezesQueAposta;
+	
 	for (i = 0; i < VezesQueAposta; i++)
-	{
+	{	
 		printf("Qual jogo?"); scanf("%d", JogosEscolhidos[i]);
-		printf("Qual o resultado que deseja?\n1.Para vitoria da equipa 1.\n2.Para vitoria da equipa 2.\n3.Para empate."); scanf("&d", ResultadoEscolhido);
+		printf("Qual o resultado que deseja?\n1.Para vitoria da equipa 1.\n2.Para vitoria da equipa 2.\n3.Para empate."); scanf("&d", ResultadoEscolhido[i]);
 	}
+
+	
+
 	for (i = 0; i < VezesQueAposta; i++)
 	{
 		switch (JogosEscolhidos[i])
 		{
 		case '1':
-			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2,ResultadoEscolhido[i],ValorApostado[i]);
 			break;
 		case '2':
-			Jogar(jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2, jogo2.cotaEquipa1V, jogo2.cotaEquipa2V, jogo2.cotaEquipaE, jogo2.ficheiro1, jogo2.ficheiro2, jogo2.probVitoriaEq1, jogo2.probVitoriaEq2);
+			Jogar(jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2, jogo2.cotaEquipa1V, jogo2.cotaEquipa2V, jogo2.cotaEquipaE, jogo2.ficheiro1, jogo2.ficheiro2, jogo2.probVitoriaEq1, jogo2.probVitoriaEq2,ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '3':
-			Jogar(jogo3.nomeDeEquipa1, jogo3.nomeDeEquipa2, jogo3.cotaEquipa1V, jogo3.cotaEquipa2V, jogo3.cotaEquipaE, jogo3.ficheiro1, jogo3.ficheiro2, jogo3.probVitoriaEq1, jogo3.probVitoriaEq2);
+			Jogar(jogo3.nomeDeEquipa1, jogo3.nomeDeEquipa2, jogo3.cotaEquipa1V, jogo3.cotaEquipa2V, jogo3.cotaEquipaE, jogo3.ficheiro1, jogo3.ficheiro2, jogo3.probVitoriaEq1, jogo3.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '4':
-			Jogar(jogo4.nomeDeEquipa1, jogo4.nomeDeEquipa2, jogo4.cotaEquipa1V, jogo4.cotaEquipa2V, jogo4.cotaEquipaE, jogo4.ficheiro1, jogo4.ficheiro2, jogo4.probVitoriaEq1, jogo4.probVitoriaEq2);
+			Jogar(jogo4.nomeDeEquipa1, jogo4.nomeDeEquipa2, jogo4.cotaEquipa1V, jogo4.cotaEquipa2V, jogo4.cotaEquipaE, jogo4.ficheiro1, jogo4.ficheiro2, jogo4.probVitoriaEq1, jogo4.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '5':
-			Jogar(jogo5.nomeDeEquipa1, jogo5.nomeDeEquipa2, jogo5.cotaEquipa1V, jogo5.cotaEquipa2V, jogo5.cotaEquipaE, jogo5.ficheiro1, jogo5.ficheiro2, jogo5.probVitoriaEq1, jogo5.probVitoriaEq2);
+			Jogar(jogo5.nomeDeEquipa1, jogo5.nomeDeEquipa2, jogo5.cotaEquipa1V, jogo5.cotaEquipa2V, jogo5.cotaEquipaE, jogo5.ficheiro1, jogo5.ficheiro2, jogo5.probVitoriaEq1, jogo5.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '6':
-			Jogar(jogo6.nomeDeEquipa1, jogo6.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			Jogar(jogo6.nomeDeEquipa1, jogo6.nomeDeEquipa2, jogo6.cotaEquipa1V, jogo6.cotaEquipa2V, jogo6.cotaEquipaE, jogo6.ficheiro1, jogo6.ficheiro2, jogo6.probVitoriaEq1, jogo6.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '7':
-			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			Jogar(jogo7.nomeDeEquipa1, jogo7.nomeDeEquipa2, jogo7.cotaEquipa1V, jogo7.cotaEquipa2V, jogo7.cotaEquipaE, jogo7.ficheiro1, jogo7.ficheiro2, jogo7.probVitoriaEq1, jogo7.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		case '8':
-			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			Jogar(jogo8.nomeDeEquipa1, jogo8.nomeDeEquipa2, jogo8.cotaEquipa1V, jogo8.cotaEquipa2V, jogo8.cotaEquipaE, jogo8.ficheiro1, jogo8.ficheiro2, jogo8.probVitoriaEq1, jogo8.probVitoriaEq2, ResultadoEscolhido[i], ValorApostado[i]);
 			break;
 		}
 	}
@@ -353,6 +375,22 @@ float AdicionarSaldo(float SaldoIntroduzido)
 	fprintf(FicheiroSaldo, "%.2f", SaldoFinal);
 	fclose(FicheiroSaldo);
 	return SaldoFinal;
+}
+float RetornarSaldo()
+{
+	FILE*FicheiroSaldo;
+	char strsaldo[10];
+	int i, x;
+	float SaldoRetornado;
+	FicheiroSaldo = fopen("AlterarSaldo.txt", "r");
+	for (i = 0; ((x = getc(FicheiroSaldo)) != EOF); i++)
+	{
+		strsaldo[i] = x;
+	}
+	SaldoRetornado = atof(strsaldo);
+	fclose(FicheiroSaldo);
+
+	return SaldoRetornado;
 }
 //Guardar e repor defenição de saldo
 void Gravar()
@@ -1070,6 +1108,7 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		strcpy(ajugar.nomeDeEquipa2, nomeEquipa2);
 		return ajugar;
 	}
+	
 }
 
 

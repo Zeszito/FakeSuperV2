@@ -1,34 +1,51 @@
 ﻿  main.c
-main.c(42): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-main.c(90): warning C4047: 'function': 'char' differs in levels of indirection from 'char [2]'
-main.c(90): warning C4024: 'GeraJogos': different types for formal and actual parameter 1
-main.c(41): warning C4101: 'modalidade': unreferenced local variable
-main.c(46): warning C4101: 'tentativa': unreferenced local variable
-main.c(116): warning C4129: ' ': unrecognized character escape sequence
-main.c(269): warning C4013: 'toupper' undefined; assuming extern returning int
-main.c(309): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(443): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(444): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(445): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(446): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(601): warning C4047: 'initializing': 'char' differs in levels of indirection from 'char [2]'
-main.c(814): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(815): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(816): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(817): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(998): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(999): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1000): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1001): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1012): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1013): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1014): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(945): warning C4101: 'lista2': unreferenced local variable
+main.c(47): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.c(154): warning C4047: 'function': 'char' differs in levels of indirection from 'char [2]'
+main.c(154): warning C4024: 'GeraJogos': different types for formal and actual parameter 1
+main.c(40): warning C4101: 'Equipa12': unreferenced local variable
+main.c(40): warning C4101: 'Equipa6': unreferenced local variable
+main.c(43): warning C4101: 'ValorApostado': unreferenced local variable
+main.c(40): warning C4101: 'Equipa10': unreferenced local variable
+main.c(46): warning C4101: 'modalidade': unreferenced local variable
+main.c(41): warning C4101: 'JogosEscolhidos': unreferenced local variable
+main.c(40): warning C4101: 'Equipa5': unreferenced local variable
+main.c(40): warning C4101: 'Equipa15': unreferenced local variable
+main.c(44): warning C4101: 'VezesQueAposta': unreferenced local variable
+main.c(44): warning C4101: 'i': unreferenced local variable
+main.c(40): warning C4101: 'Equipa9': unreferenced local variable
+main.c(40): warning C4101: 'Equipa8': unreferenced local variable
+main.c(51): warning C4101: 'tentativa': unreferenced local variable
+main.c(40): warning C4101: 'Equipa7': unreferenced local variable
+main.c(40): warning C4101: 'Equipa16': unreferenced local variable
+main.c(40): warning C4101: 'Equipa13': unreferenced local variable
+main.c(40): warning C4101: 'Equipa11': unreferenced local variable
+main.c(42): warning C4101: 'ResultadoEscolhido': unreferenced local variable
+main.c(40): warning C4101: 'Equipa14': unreferenced local variable
+main.c(180): warning C4129: ' ': unrecognized character escape sequence
+main.c(333): warning C4013: 'toupper' undefined; assuming extern returning int
+main.c(373): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(393): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(523): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(524): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(525): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(526): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(681): warning C4047: 'initializing': 'char' differs in levels of indirection from 'char [2]'
+main.c(894): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(895): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(896): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(897): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1078): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1079): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1080): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1081): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1092): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1093): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1094): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1025): warning C4101: 'lista2': unreferenced local variable
   Generating code
-c:\users\andré rodrigues\desktop\remake\fakesuperv2\ramekwork\main.c(1034): warning C4715: 'GeraEstatistica': not all control paths return a value
-  2 of 23 functions ( 8.7%) were compiled, the rest were copied from previous compilation.
+  1 of 24 functions ( 4.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   RamekWork.vcxproj -> C:\Users\André Rodrigues\Desktop\Remake\FakeSuperV2\Release\RamekWork.exe
   RamekWork.vcxproj -> C:\Users\André Rodrigues\Desktop\Remake\FakeSuperV2\Release\RamekWork.pdb (Full PDB)
