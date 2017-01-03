@@ -36,6 +36,9 @@ void Repor();
 ProbEquipas GeraEstatistica(int equipa1, int equipa2);
 
 int main(void) {
+	int Equipa1, Equipa2, Equipa3, Equipa4;
+	int JogosEscolhidos[8];
+	int VezesQueAposta, i, ResultadoEscolhido;
 	int sair = 0;
 	char chose, modalidade;
 	srand(time(NULL));
@@ -43,10 +46,60 @@ int main(void) {
 	GeraCabecalho();
 	GeraMenu();
 	ProbEquipas tentativa;
-	tentativa = GeraEstatistica(3,1);
+	ProbEquipas jogo1, jogo2;
+	/*tentativa = GeraEstatistica(3,1);
 	printf("%f-%f-%f-%f-%f\n", tentativa.cotaEquipa1V, tentativa.cotaEquipa2V, tentativa.cotaEquipaE, tentativa.probVitoriaEq1, tentativa.probVitoriaEq2);
 	printf("%s-%s\n", tentativa.nomeDeEquipa1, tentativa.ficheiro1);
-	printf("%s-%s\n", tentativa.nomeDeEquipa2, tentativa.ficheiro2);
+	printf("%s-%s\n", tentativa.nomeDeEquipa2, tentativa.ficheiro2);*/
+	Equipa1 = rand() % 3 + 1;
+	Equipa2 = rand() % 3 + 4;
+	jogo1 = GeraEstatistica(Equipa1, Equipa2);
+	printf("1.%s V.S. %s\n", jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2);
+
+	Equipa3 = rand() % 3 + 7;
+	Equipa4 = rand() % 3 + 10;
+	jogo2 = GeraEstatistica(Equipa3, Equipa4);
+	printf("2.%s V.S. %s\n", jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2);
+
+	//Faz esta merda!Otario!
+
+	for (i = 0; i < VezesQueAposta; i++)
+	{
+		printf("Qual jogo?"); scanf("%d", JogosEscolhidos[i]);
+		printf("Qual o resultado que deseja?\n1.Para vitoria da equipa 1.\n2.Para vitoria da equipa 2.\n3.Para empate."); scanf("&d", ResultadoEscolhido);
+	}
+	for (i = 0; i < VezesQueAposta; i++)
+	{
+		switch (JogosEscolhidos[i])
+		{
+		case '1':
+			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			break;
+		case '2':
+			Jogar(jogo2.nomeDeEquipa1, jogo2.nomeDeEquipa2, jogo2.cotaEquipa1V, jogo2.cotaEquipa2V, jogo2.cotaEquipaE, jogo2.ficheiro1, jogo2.ficheiro2, jogo2.probVitoriaEq1, jogo2.probVitoriaEq2);
+			break;
+		case '3':
+			Jogar(jogo3.nomeDeEquipa1, jogo3.nomeDeEquipa2, jogo3.cotaEquipa1V, jogo3.cotaEquipa2V, jogo3.cotaEquipaE, jogo3.ficheiro1, jogo3.ficheiro2, jogo3.probVitoriaEq1, jogo3.probVitoriaEq2);
+			break;
+		case '4':
+			Jogar(jogo4.nomeDeEquipa1, jogo4.nomeDeEquipa2, jogo4.cotaEquipa1V, jogo4.cotaEquipa2V, jogo4.cotaEquipaE, jogo4.ficheiro1, jogo4.ficheiro2, jogo4.probVitoriaEq1, jogo4.probVitoriaEq2);
+			break;
+		case '5':
+			Jogar(jogo5.nomeDeEquipa1, jogo5.nomeDeEquipa2, jogo5.cotaEquipa1V, jogo5.cotaEquipa2V, jogo5.cotaEquipaE, jogo5.ficheiro1, jogo5.ficheiro2, jogo5.probVitoriaEq1, jogo5.probVitoriaEq2);
+			break;
+		case '6':
+			Jogar(jogo6.nomeDeEquipa1, jogo6.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			break;
+		case '7':
+			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			break;
+		case '8':
+			Jogar(jogo1.nomeDeEquipa1, jogo1.nomeDeEquipa2, jogo1.cotaEquipa1V, jogo1.cotaEquipa2V, jogo1.cotaEquipaE, jogo1.ficheiro1, jogo1.ficheiro2, jogo1.probVitoriaEq1, jogo1.probVitoriaEq2);
+			break;
+		}
+	}
+
+
 
 	//Recpecao do User
 	while (sair!=1)
@@ -67,19 +120,7 @@ int main(void) {
 			VerSaldo();
 			break;
 		case '2':
-			printf("Da tabela seguinte escolha uma das seguintes modalidades:");
-			scanf("%c", modalidade);
-			while (!(modalidade >= 'A' && modalidade <= 'Z' || modalidade >= 'a' && modalidade <= 'z'))
-			{
-				fflush(stdin);
-				printf("o valor introduzido esta incorrecto,\nintroduza novamente a coluna:\n");
-				scanf("%c", &modalidade);
-			}
-			modalidade = toupper(modalidade);
-			printf("Jogos da modalidade");
-			printf("Escolha um jogo");
-			printf("Escolha um resultado");
-			printf("Quanto quer apostar");
+			
 			break;
 		case '3':
 			Listar();
@@ -392,6 +433,7 @@ void PrintInfosEquipa(char nometxt[], char nomeEquipa[]) {
 		scanf("%s", lista);
 		fprintf(FicheiroDadosEquipas, "%s", lista);
 		fclose(FicheiroDadosEquipas);
+		
 	}
 	else
 	{
@@ -487,67 +529,67 @@ void Listar() {
 				PrintInfosEquipa("football/RealMadrid.txt", "Real Madrid");
 				break;
 			}
-			case 7://Atletico de Madrid
+			case 6://Atletico de Madrid
 			{
 				PrintInfosEquipa("football/AtleticoMadrid.txt", "Atletico Madrid");
 				break;
 			}
-			case 8://Sevilha FC
+			case 7://Sevilha FC
 			{
 				PrintInfosEquipa("football/Sevilha.txt", "Sevilha");
 				break;
 			}
-			case 9://Bayern Munchen
+			case 8://Bayern Munchen
 			{
 				PrintInfosEquipa("football/Bayern.txt", "Bayern");
 				break;
 			}
-			case 11://Wolfsburg
+			case 9://Wolfsburg
 			{
 				PrintInfosEquipa("football/Wolfsburg.txt", "Wolfsburg");
 				break;
 			}
-			case 12://FC Koln
+			case 10://FC Koln
 			{
 				PrintInfosEquipa("football/Koln.txt", "Koln");
 				break;
 			}
-			case 13://Manchester United
+			case 11://Manchester United
 			{
 				PrintInfosEquipa("football/ManchesterUnited.txt", "Manchester United");
 				break;
 			}
-			case 14://Manchester City
+			case 12://Manchester City
 			{
 				PrintInfosEquipa("football/ManchesterCity.txt", "Manchester City");
 				break;
 			}
-			case 15://Arsenal FC
+			case 13://Arsenal FC
 			{
 				PrintInfosEquipa("football/Arsenal.txt", "Arsenal");
 				break;
 			}
-			case 16://Chelsea FC
+			case 14://Chelsea FC
 			{
 				PrintInfosEquipa("football/Chelsea.txt", "Chelsea");
 				break;
 			}
-			case 17://Juventus FC
+			case 15://Juventus FC
 			{
 				PrintInfosEquipa("football/Juventus.txt", "Juventus");
 				break;
 			}
-			case 18://SSC Napoli
+			case 16://SSC Napoli
 			{
 				PrintInfosEquipa("football/Napoli.txt", "SSC Napoli");
 				break;
 			}
-			case 19://Internaziole
+			case 17://Internaziole
 			{
 				PrintInfosEquipa("football/Inter.txt", "FC Internazionale Milano");
 				break;
 			}
-			case 20://AC MIlan
+			case 18://AC MIlan
 			{
 				PrintInfosEquipa("football/Milan.txt", "AC Milan");
 				break;
@@ -666,79 +708,79 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		strcpy(nomeEquipa1, "Real Madrid");
 		break;
 	}
-	case 7://Atletico de Madrid
+	case 6://Atletico de Madrid
 	{
 		strcpy(nometxt, "football/AtleticoMadrid.txt");
 		strcpy(nomeEquipa1, "Altletico Madrid");
 		break;
 	}
-	case 8://Sevilha FC
+	case 7://Sevilha FC
 	{
 		strcpy(nometxt, "football/Sevilha.txt");
 		strcpy(nomeEquipa1, "Sevilha");
 		break;
 	}
-	case 9://Bayern Munchen
+	case 8://Bayern Munchen
 	{
 		strcpy(nometxt, "football/Bayern.txt");
 		strcpy(nomeEquipa1, "Bayern");
 		break;
 	}
-	case 11://Wolfsburg
+	case 9://Wolfsburg
 	{
 		strcpy(nometxt, "football/Wolfsburg.txt");
 		strcpy(nomeEquipa1, "Wolfsburg");
 		break;
 	}
-	case 12://FC Koln
+	case 10://FC Koln
 	{
 		strcpy(nometxt, "football/Koln.txt");
 		strcpy(nomeEquipa1, "Koln");
 		break;
 	}
-	case 13://Manchester United
+	case 11://Manchester United
 	{
 		strcpy(nometxt, "football/ManchesterUnited.txt");
 		strcpy(nomeEquipa1, "Manchester United");
 		break;
 	}
-	case 14://Manchester City
+	case 12://Manchester City
 	{
 		strcpy(nometxt, "football/ManchesterCity.txt");
 		strcpy(nomeEquipa1, "Manchester City");
 		break;
 	}
-	case 15://Arsenal FC
+	case 13://Arsenal FC
 	{
 		strcpy(nometxt, "football/Arsenal.txt");
 		strcpy(nomeEquipa1, "Arsenal");
 		break;
 	}
-	case 16://Chelsea FC
+	case 14://Chelsea FC
 	{
 		strcpy(nometxt, "football/Chelsea.txt");
 		strcpy(nomeEquipa1, "Chelsea");
 		break;
 	}
-	case 17://Juventus FC
+	case 15://Juventus FC
 	{
 		strcpy(nometxt, "football/Juventus.txt");
 		strcpy(nomeEquipa1, "Juventus");
 		break;
 	}
-	case 18://SSC Napoli
+	case 16://SSC Napoli
 	{
 		strcpy(nometxt, "football/Napoli.txt");
 		strcpy(nomeEquipa1, "SSC Napoli");
 		break;
 	}
-	case 19://Internaziole
+	case 17://Internaziole
 	{
 		strcpy(nometxt, "football/Inter.txt");
 		strcpy(nomeEquipa1, "Internaziole");
 		break;
 	}
-	case 20://AC MIlan
+	case 18://AC MIlan
 	{
 		strcpy(nometxt, "football/Milan.txt");
 		strcpy(nomeEquipa1, "AC Milan");
@@ -853,79 +895,79 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		strcpy(nomeEquipa2, "Real Madrid");
 		break;
 	}
-	case 7://Atletico de Madrid
+	case 6://Atletico de Madrid
 	{
 		strcpy(nometxt2, "football/AtleticoMadrid.txt");
 		strcpy(nomeEquipa2, "Altletico Madrid");
 		break;
 	}
-	case 8://Sevilha FC
+	case 7://Sevilha FC
 	{
 		strcpy(nometxt2, "football/Sevilha.txt");
 		strcpy(nomeEquipa2, "Sevilha");
 		break;
 	}
-	case 9://Bayern Munchen
+	case 8://Bayern Munchen
 	{
 		strcpy(nometxt2, "football/Bayern.txt");
 		strcpy(nomeEquipa2, "Bayern");
 		break;
 	}
-	case 11://Wolfsburg
+	case 9://Wolfsburg
 	{
 		strcpy(nometxt2, "football/Wolfsburg.txt");
 		strcpy(nomeEquipa2, "Wolfsburg");
 		break;
 	}
-	case 12://FC Koln
+	case 10://FC Koln
 	{
 		strcpy(nometxt2, "football/Koln.txt");
 		strcpy(nomeEquipa2, "Koln");
 		break;
 	}
-	case 13://Manchester United
+	case 11://Manchester United
 	{
 		strcpy(nometxt2, "football/ManchesterUnited.txt");
 		strcpy(nomeEquipa2, "Manchester United");
 		break;
 	}
-	case 14://Manchester City
+	case 12://Manchester City
 	{
 		strcpy(nometxt2, "football/ManchesterCity.txt");
 		strcpy(nomeEquipa2, "Manchester City");
 		break;
 	}
-	case 15://Arsenal FC
+	case 13://Arsenal FC
 	{
 		strcpy(nometxt2, "football/Arsenal.txt");
 		strcpy(nomeEquipa2, "Arsenal");
 		break;
 	}
-	case 16://Chelsea FC
+	case 14://Chelsea FC
 	{
 		strcpy(nometxt2, "football/Chelsea.txt");
 		strcpy(nomeEquipa2, "Chelsea");
 		break;
 	}
-	case 17://Juventus FC
+	case 15://Juventus FC
 	{
 		strcpy(nometxt2, "football/Juventus.txt");
 		strcpy(nomeEquipa2, "Juventus");
 		break;
 	}
-	case 18://SSC Napoli
+	case 16://SSC Napoli
 	{
 		strcpy(nometxt2, "football/Napoli.txt");
 		strcpy(nomeEquipa2, "SSC Napoli");
 		break;
 	}
-	case 19://Internaziole
+	case 17://Internaziole
 	{
 		strcpy(nometxt2, "football/Inter.txt");
 		strcpy(nomeEquipa2, "Internaziole");
 		break;
 	}
-	case 20://AC MIlan
+	case 18://AC MIlan
 	{
 		strcpy(nometxt2, "football/Milan.txt");
 		strcpy(nomeEquipa2, "AC Milan");
@@ -1029,4 +1071,6 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		return ajugar;
 	}
 }
+
+
 	
