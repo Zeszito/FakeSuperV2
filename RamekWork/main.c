@@ -14,6 +14,9 @@ typedef struct
 	float probVitoriaEq2;
 	char nomeDeEquipa1[30];
 	char nomeDeEquipa2[30];
+	char ficheiro1[35];
+	char ficheiro2[35];
+
 }ProbEquipas;
 
 void GeraCabecalho();
@@ -41,9 +44,9 @@ int main(void) {
 	GeraMenu();
 	ProbEquipas tentativa;
 	tentativa = GeraEstatistica(3,1);
-	printf("%f", tentativa.probVitoriaEq2);
-	printf("%s", tentativa.nomeDeEquipa1);
-	printf("%s", tentativa.nomeDeEquipa2);
+	printf("%f-%f-%f-%f-%f\n", tentativa.cotaEquipa1V, tentativa.cotaEquipa2V, tentativa.cotaEquipaE, tentativa.probVitoriaEq1, tentativa.probVitoriaEq2);
+	printf("%s-%s\n", tentativa.nomeDeEquipa1, tentativa.ficheiro1);
+	printf("%s-%s\n", tentativa.nomeDeEquipa2, tentativa.ficheiro2);
 
 	//Recpecao do User
 	while (sair!=1)
@@ -816,9 +819,8 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 	probVequipa1 = ((float)Nvitorias / (float)Njogos); //Ai este cast
 	float  probE1;
 	probE1 = ((float)Nempates / (float)Njogos);
-	float probabilidadeDerrotaE1=0, probD1;
+	float  probD1;
 	probD1 = ((float)Nderrotas / (float)Njogos);
-
 	switch (equipa2)
 	{
 	case 1://Sporting Clube de Portugal
@@ -936,7 +938,7 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 	}
 	}
 
-	//i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+	i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
 	char lista2[100], jogos2[100] = { 0 }, vitorias2[100] = { 0 }, empates2[100] = { 0 }, derrotas2[100] = { 0 };
 	float Njogos2 = 0, Nvitorias2 = 0, Nempates2 = 0, Nderrotas2 = 0;
 	FILE *FicheiroDadosEquipas2;
@@ -997,17 +999,16 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		
 		float  probVequipa2;
 		probVequipa2 = ((float)Nvitorias2 / (float)Njogos2); //Ai este cast
-		
 		float probabilidadeEmpate, probE2;
 		probE2 = ((float)Nempates2 / (float)Njogos2);
 		float  probD2;
 		probD2 = ((float)Nderrotas2 / (float)Njogos2);
 		
-		//Finais
-		probVequipa1 = (probVequipa1 + probD2) / 0.2;
 		
-		probVequipa2 = (probVequipa2 + probD1) / 0.2;
-		probabilidadeEmpate = (probE1 + probE2) / 2.0;
+		//Finais
+		probVequipa1 = (probVequipa1 + probD2) / 2.0;
+		probVequipa2 = (probVequipa2 + probD1) / 2.0;
+		probabilidadeEmpate = (probE1 + probE2) /2.0;
 
 		//Cotas
 		float CotaEqu1V, CotaEqu2V, CotaEmp;
@@ -1020,6 +1021,9 @@ ProbEquipas GeraEstatistica(int equipa1, int equipa2) {
 		ajugar.cotaEquipaE = CotaEmp;
 		ajugar.probVitoriaEq1 = probVequipa1;
 		ajugar.probVitoriaEq2 = probVequipa2;
+		
+		strcpy(ajugar.ficheiro2, nometxt2);
+		strcpy(ajugar.ficheiro1, nometxt);
 		strcpy(ajugar.nomeDeEquipa1, nomeEquipa1);
 		strcpy(ajugar.nomeDeEquipa2, nomeEquipa2);
 		return ajugar;
