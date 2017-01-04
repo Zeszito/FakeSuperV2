@@ -1,52 +1,54 @@
 ﻿  main.c
-main.c(47): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-main.c(150): warning C4047: 'function': 'char' differs in levels of indirection from 'char [2]'
-main.c(150): warning C4024: 'GeraJogos': different types for formal and actual parameter 1
-main.c(40): warning C4101: 'Equipa12': unreferenced local variable
-main.c(40): warning C4101: 'Equipa4': unreferenced local variable
-main.c(40): warning C4101: 'Equipa6': unreferenced local variable
-main.c(40): warning C4101: 'Equipa1': unreferenced local variable
-main.c(43): warning C4101: 'ValorApostado': unreferenced local variable
-main.c(40): warning C4101: 'Equipa2': unreferenced local variable
-main.c(40): warning C4101: 'Equipa10': unreferenced local variable
-main.c(40): warning C4101: 'Equipa3': unreferenced local variable
-main.c(46): warning C4101: 'modalidade': unreferenced local variable
-main.c(41): warning C4101: 'JogosEscolhidos': unreferenced local variable
-main.c(40): warning C4101: 'Equipa5': unreferenced local variable
-main.c(40): warning C4101: 'Equipa15': unreferenced local variable
-main.c(44): warning C4101: 'VezesQueAposta': unreferenced local variable
-main.c(44): warning C4101: 'i': unreferenced local variable
-main.c(40): warning C4101: 'Equipa9': unreferenced local variable
-main.c(40): warning C4101: 'Equipa8': unreferenced local variable
-main.c(40): warning C4101: 'Equipa7': unreferenced local variable
-main.c(40): warning C4101: 'Equipa16': unreferenced local variable
-main.c(40): warning C4101: 'Equipa13': unreferenced local variable
-main.c(40): warning C4101: 'Equipa11': unreferenced local variable
-main.c(42): warning C4101: 'ResultadoEscolhido': unreferenced local variable
-main.c(40): warning C4101: 'Equipa14': unreferenced local variable
-main.c(176): warning C4129: ' ': unrecognized character escape sequence
-main.c(329): warning C4013: 'toupper' undefined; assuming extern returning int
-main.c(369): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(389): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(519): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(520): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(521): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(522): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(706): warning C4047: 'initializing': 'char' differs in levels of indirection from 'char [2]'
-main.c(954): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(955): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(956): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(957): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1174): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1175): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1176): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1177): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1188): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1189): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1190): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-main.c(1121): warning C4101: 'lista2': unreferenced local variable
+main.c(46): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+main.c(150): warning C4305: 'function': truncation from 'double' to 'float'
+main.c(150): warning C4020: 'jogar': too many actual parameters
+main.c(39): warning C4101: 'Equipa12': unreferenced local variable
+main.c(39): warning C4101: 'Equipa4': unreferenced local variable
+main.c(42): warning C4101: 'SaldoDisponivel': unreferenced local variable
+main.c(39): warning C4101: 'Equipa6': unreferenced local variable
+main.c(42): warning C4101: 'ValorApostado': unreferenced local variable
+main.c(39): warning C4101: 'Equipa10': unreferenced local variable
+main.c(39): warning C4101: 'Equipa3': unreferenced local variable
+main.c(45): warning C4101: 'modalidade': unreferenced local variable
+main.c(40): warning C4101: 'JogosEscolhidos': unreferenced local variable
+main.c(39): warning C4101: 'Equipa5': unreferenced local variable
+main.c(51): warning C4101: 'jogo2': unreferenced local variable
+main.c(39): warning C4101: 'Equipa15': unreferenced local variable
+main.c(43): warning C4101: 'VezesQueAposta': unreferenced local variable
+main.c(43): warning C4101: 'i': unreferenced local variable
+main.c(42): warning C4101: 'ValorApostadoIndividual': unreferenced local variable
+main.c(39): warning C4101: 'Equipa9': unreferenced local variable
+main.c(39): warning C4101: 'Equipa8': unreferenced local variable
+main.c(39): warning C4101: 'Equipa7': unreferenced local variable
+main.c(39): warning C4101: 'Equipa16': unreferenced local variable
+main.c(39): warning C4101: 'Equipa13': unreferenced local variable
+main.c(39): warning C4101: 'Equipa11': unreferenced local variable
+main.c(41): warning C4101: 'ResultadoEscolhido': unreferenced local variable
+main.c(39): warning C4101: 'Equipa14': unreferenced local variable
+main.c(183): warning C4129: ' ': unrecognized character escape sequence
+main.c(336): warning C4013: 'toupper' undefined; assuming extern returning int
+main.c(376): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(396): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(526): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(527): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(528): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(529): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(935): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(936): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(937): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(938): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1155): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1156): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1157): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1158): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1169): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1171): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+main.c(1102): warning C4101: 'lista2': unreferenced local variable
   Generating code
-  1 of 23 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
+c:\users\moises\cnewwork\fakesuperv2\ramekwork\main.c(59): warning C4700: uninitialized local variable 'Equipa2' used
+c:\users\moises\cnewwork\fakesuperv2\ramekwork\main.c(59): warning C4700: uninitialized local variable 'Equipa1' used
+  2 of 24 functions ( 8.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
