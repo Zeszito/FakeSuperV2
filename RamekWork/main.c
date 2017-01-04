@@ -131,6 +131,8 @@ int main(void) {
 	//Recpecao do User
 	while (sair!=1)
 	{
+		GeraCabecalho();
+		GeraMenu();
 		chose = getchar();
 		while (!(chose == '1' || chose == '2' || chose == '3' || chose == '4' || chose == '5' || chose == '6'))
 		{
@@ -148,6 +150,7 @@ int main(void) {
 			break;
 		case '2':
 			jogar("porto", "benfica", 2,1,2.1,2.3,3.1,3,0.5,07);
+			jogar("Rio Ave", "benfica", 2, 1, 6.1, 4.3, 3.1, 3, 0.5, 07);
 			//void jogar(char nomeDeEquipa1[], char nomeDeEquipa2[], float ValorApostadoIndividual, int ResultadoEscolhido, float cotaEquipa1V, float cotaEquipa2V, float cotaEmpate, float probVitoriaEq1, float probVitoriaEq2);
 			break;
 		case '3':
@@ -1216,6 +1219,9 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 
 	//Simular
 	for (i = 1; i < 5; i++) {
+		fflush(stdin);
+		getchar();
+		fflush(stdin);
 		if (quemRemata % 2 == 0) {
 			if (probVitoriaEq1 * 10  > rand() % 10 + 1) {
 				goloEquipa1++;			
@@ -1224,24 +1230,28 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 				switch (fraseRelato) {
 				case 1:
 				{
-					//printf("Alexandre Afonso: O %s Cheirou a baliza e entrou!\n", nomeDeEquipa1);
+					printf("Alexandre Afonso: O %s Cheirou a baliza e entrou!\n", nomeDeEquipa1);
 					printf("Nuno Matos: faz-se assim o %s: %i\t %s: %i com este golo do %s\n", nomeDeEquipa1, goloEquipa1, nomeDeEquipa2, goloEquipa2, nomeDeEquipa1);
+					break;
 				}
 				case 2:
 				{
-					//printf("Alexandre Afonso: Erro do %s ela vai rasteira entra!!! O bom football joga-se aqui!\n", nomeDeEquipa2);
+					printf("Alexandre Afonso: Erro do %s ela vai rasteira entra!!! O bom football joga-se aqui!\n", nomeDeEquipa2);
 					printf("Nuno Matos: faz-se assim o %s: %i\t %s: %i com este golo do %s\n", nomeDeEquipa1, goloEquipa1, nomeDeEquipa2, goloEquipa2, nomeDeEquipa1);
+					break;
 				}
 				case 3:
 				{
 					printf("Nuno Matos : Resulta de um lance desinteressante mas o %s : %i\t %s: %i fica feito com esta ratada do %s\n", nomeDeEquipa1, goloEquipa1, nomeDeEquipa2, goloEquipa2, nomeDeEquipa1);
+					break;
 				}
 				case 4:
 				{
 					printf("Nuno Matos : Voltaram fortes e mostraram-se fortes neste golo o %s\n", nomeDeEquipa1);
+					break;
 				}
 				}
-				printf("\nChegou aqui1\n");
+			
 				quemRemata++;
 			}
 
@@ -1250,28 +1260,32 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 				switch (fraseRelato) {
 				case 1:
 				{
-					//printf("Alexandre Afonso: O jacare tossui, a mae chorou mas o guardiao segurou!\n");
+					printf("Alexandre Afonso: O jacare tossui, a mae chorou mas o guardiao segurou!\n");
 					printf("Nuno Matos: melhor sorte para a próxima %s\n", nomeDeEquipa1);
+					break;
 
 				}
 				case 2:
 				{
-					//printf("Alexandre Afonso: Aprende-se com os erros %s que leva licao para casa ao falhar o remate\n", nomeDeEquipa1);
+					printf("Alexandre Afonso: Aprende-se com os erros %s que leva licao para casa ao falhar o remate\n", nomeDeEquipa1);
 					printf("Nuno Matos: O resultado mante-se %s: %i\t %s: %i sem haver o golo do %s\n", nomeDeEquipa1, goloEquipa1, nomeDeEquipa2, goloEquipa2, nomeDeEquipa1);
+					break;
 
 				}
 				case 3:
 				{
 					printf("Nuno Matos :Tanta cabeça e a bola sai para as maos do guardiao do %s\n", nomeDeEquipa2);
+					break;
 
 				}
 				case 4:
 				{
 					printf("Alexandre Afonso : Sao uma parede o %s e defendem este lance com elegancia\n", nomeDeEquipa2);
+					break;
 
 				}
 				}
-				printf("\nChegou aqui1\n");
+		
 				quemRemata++;
 			}
 		}
@@ -1283,27 +1297,31 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 				switch (fraseRelato) {
 				case 1:
 				{
-					//printf("Alexandre Afonso: O %s foi e ja esta!\n", nomeDeEquipa2);
-					printf("Nuno Matos: temos o resultado %s: %i\t %s: %i com este golo do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa1);
+					printf("Alexandre Afonso: O %s foi e ja esta!\n", nomeDeEquipa2);
+					printf("Nuno Matos: temos o resultado %s: %i %s: %i com este golo do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa2);
+					break;
 
 				}
 				case 2:
 				{
-					//printf("Alexandre Afonso: Perna coxa para o %s ela vai de curva e entra!!! O bom football joga-se aqui!\n", nomeDeEquipa1);
-					printf("Nuno Matos: faz-se assim o %s: %i\t %s: %i com este golo do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa2);
+					printf("Alexandre Afonso: Perna coxa para o %s ela vai de curva e entra!!! O bom football joga-se aqui!\n", nomeDeEquipa1);
+					printf("Nuno Matos: faz-se assim o %s: %i %s: %i com este golo do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa2);
+					break;
 				}
 				case 3:
 				{
-					printf("Nuno Matos : Todos de pe e.... %s : %i\t %s: %i esta marcado obsequio da equipa do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa2);
+					printf("Nuno Matos : Todos de pe e.... %s : %i %s: %i esta marcado obsequio da equipa do %s\n", nomeDeEquipa2, goloEquipa2, nomeDeEquipa1, goloEquipa1, nomeDeEquipa2);
+					break;
 				}
 				case 4:
 				{
 					printf("Nuno Matos : Voltaram fortes e mostraram-se fortes neste golo o %s\n", nomeDeEquipa2);
+					break;
 				}
 				}
 				//switch quem remata faz uma string de 10 foi golo
 				quemRemata++;
-				printf("\nChegou aqui2\n");
+	
 			}
 			else {
 				fraseRelato = rand() % 4 + 1;
@@ -1312,23 +1330,26 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 				{
 
 					printf("Nuno Matos: Temos pena %s que tirou tinta, mas nao deixa marca\n", nomeDeEquipa2);
+					break;
 				}
 				case 2:
 				{
 
 					printf("Nuno Matos: O resultado mante-se %s: %i\t %s: %i com um falhanco do %s\n", nomeDeEquipa1, goloEquipa1, nomeDeEquipa2, goloEquipa2, nomeDeEquipa2);
+					break;
 				}
 				case 3:
 				{
 					printf("Nuno Matos :Atento o numero 99, como e tradicao do %s\n", nomeDeEquipa1);
+					break;
 				}
 				case 4:
 				{
-					printf("Alexandre Afonso : Sem a bencao nao vao la  e o %s e defendem este lance sem problema\n", nomeDeEquipa1);
+					printf("Alexandre Afonso : Sem a bencao nao vao la e o %s e defendem este lance sem problema\n", nomeDeEquipa1);
+					break;
 				}
 				}
 				quemRemata++;
-				printf("\nChegou aqui2\n");
 				//switch quem remata faz uma string de 10 falhou
 			}
 		}
@@ -1341,26 +1362,89 @@ void jogar(char nomeDeEquipa1[30], char nomeDeEquipa2[30], float ValorApostadoIn
 		AdicionarSaldo(-SaldoEmJogo);
 		AdicionarSaldo(SaldoPossivelGanho);
 		saldo = RetornarSaldo();
-		printf("Parabens! o Seu saldo adora é de %f\n\n", saldo);
+		printf("Parabens! o Seu saldo adora e de %f\n\n", saldo);
 
 	}
 	else if (goloEquipa1 < goloEquipa2 && ResultadoEscolhido == 2) {
 		AdicionarSaldo(-SaldoEmJogo);
 		AdicionarSaldo(SaldoPossivelGanho);
 		saldo = RetornarSaldo();
-		printf("Parabens! o Seu saldo adora é de %f\n\n", saldo);
+		printf("Parabens! o Seu saldo agora e de %f\n\n", saldo);
 	}
 	else if (goloEquipa1 == goloEquipa2 && ResultadoEscolhido == 3) {
 		AdicionarSaldo(-SaldoEmJogo);
 		AdicionarSaldo(SaldoPossivelGanho);
 		saldo = RetornarSaldo();
-		printf("Parabens! o Seu saldo adora é de %f\n\n", saldo);
+		printf("Parabens! o Seu saldo agora e de %f\n\n", saldo);
 	}
 	else {
 		AdicionarSaldo(-SaldoEmJogo);
 		saldo = RetornarSaldo();
 		printf("Com muita pena mas nao previu a resulado, ficou com %f euros\n\n", saldo);
 	}
+	printf("Próximo jogo para quem vai jogar!");
+	fflush(stdin);
+	getchar();
+	fflush(stdin);
+	system("cls");
+}
+
+void alterarficheiro(char txt[40]) {
+	char ficheiroCausa[40] = "";
+	strcpy(ficheiroCausa, txt);
+	FILE *FicheiroDadosEquipas;
+	int i = 0, j = 0, l = 0, p = 0, h = 0, x, y, z, w, r;
+	char lista[100], jogos[100] = { 0 }, vitorias[100] = { 0 }, empates[100] = { 0 }, derrotas[100] = { 0 };
+	float Njogos = 0, Nvitorias = 0, Nempates = 0, Nderrotas = 0;
+	FicheiroDadosEquipas = fopen(txt, "w");
+	if (FicheiroDadosEquipas == NULL)
+	{
+		printf("Este ficheiro nao existia.");
+		alterarficheiro(ficheiroCausa);
+	}
+	else
+	{
+		while ((x = getc(FicheiroDadosEquipas)) != EOF)
+		{
+			lista[i] = x;
+
+			if (lista[i] == 'J')
+			{
+				while ((y = getc(FicheiroDadosEquipas)) != '_')
+				{
+					jogos[j] = y;
+					j++;
+				}
+			}
+			if (lista[i] == 'V')
+			{
+				while ((z = getc(FicheiroDadosEquipas)) != '_')
+				{
+					vitorias[l] = z;
+					l++;
+				}
+			}
+			if (lista[i] == 'E')
+			{
+				while ((w = getc(FicheiroDadosEquipas)) != '_')
+				{
+					empates[p] = w;
+					p++;
+				}
+			}
+			if (lista[i] == 'D')
+			{
+				while ((r = getc(FicheiroDadosEquipas)) != '_')
+				{
+					derrotas[h] = r;
+					h++;
+				}
+			}
+			i++;
+		}
+
+	}
+
 }
 
 
